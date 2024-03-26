@@ -6,19 +6,21 @@
     <ng-content></ng-content>
 
     <div class="btn-wrapper">
-      <button class="btn-primary">
-        <!-- (click)="submit()"
-      [disabled]="disablePrimaryBtn" -->
-
+      <button
+        class="btn-primary"
+        (click)="submit()"
+        [disabled]="disablePrimaryButton"
+      >
         {{ primaryButtonText }}
       </button>
+
       <div class="divider">
         <div></div>
         <span>or</span>
         <div></div>
       </div>
-      <button class="btn-secondary">
-        <!-- (click)="navigate()" -->
+
+      <button class="btn-secondary" (click)="navigate()">
         {{ secondaryButtonText }}
       </button>
     </div>
