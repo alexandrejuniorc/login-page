@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { DefaultLoginLayoutComponent } from '../../components/default-login-layout/default-login-layout.component';
 import { InputPrimaryComponent } from '../../components/input-primary/input-primary.component';
 import { LoginService } from '../../services/login/login.service';
@@ -49,7 +54,11 @@ export class SignupComponent {
 
   submit() {
     this.loginService
-      .login(this.signupForm.value.email, this.signupForm.value.password)
+      .signup(
+        this.signupForm.value.name,
+        this.signupForm.value.email,
+        this.signupForm.value.password
+      )
       .subscribe({
         next: () => this.toastService.success('Login feito com sucesso!'),
         error: () =>
